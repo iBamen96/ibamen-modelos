@@ -8,250 +8,45 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #f5f4f0;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-      color: #1a1a1a;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 3rem;
-      max-width: 680px;
-      width: 100%;
-      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-    }
-
-    .form-header {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #ebebeb;
-    }
-
-    .brand-tag {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      color: #999;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    .form-header h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 30px;
-      font-weight: 400;
-      color: #1a1a1a;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    .form-header p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.7;
-    }
-
+    body { font-family: 'DM Sans', sans-serif; background: #f5f4f0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 3rem 1.5rem; color: #1a1a1a; }
+    .card { background: #fff; border-radius: 16px; padding: 3rem; max-width: 680px; width: 100%; box-shadow: 0 2px 24px rgba(0,0,0,0.06); }
+    .form-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ebebeb; }
+    .brand-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: #999; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .form-header h1 { font-family: 'DM Serif Display', serif; font-size: 30px; font-weight: 400; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.2; }
+    .form-header p { font-size: 14px; color: #666; line-height: 1.7; }
     .section { margin-bottom: 2.25rem; }
-
-    .section-label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid #ebebeb;
-    }
-
+    .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #aaa; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid #ebebeb; }
     .field-group { display: grid; gap: 1rem; }
-
-    .field-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .field { display: flex; flex-direction: column; gap: 6px; }
-
-    .field label {
-      font-size: 13px;
-      font-weight: 500;
-      color: #1a1a1a;
-    }
-
-    .hint {
-      font-size: 12px;
-      color: #aaa;
-    }
-
-    .field input,
-    .field textarea {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      padding: 10px 14px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      background: #fff;
-      color: #1a1a1a;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      outline: none;
-      width: 100%;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      border-color: #1a1a1a;
-      box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
-    }
-
-    .field textarea {
-      resize: vertical;
-      min-height: 90px;
-      line-height: 1.6;
-    }
-
-    .rates-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .rates-grid .field label {
-      font-size: 12px;
-      color: #666;
-    }
-
+    .field label { font-size: 13px; font-weight: 500; color: #1a1a1a; }
+    .hint { font-size: 12px; color: #aaa; }
+    .field input, .field textarea { font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 10px 14px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fff; color: #1a1a1a; transition: border-color 0.15s, box-shadow 0.15s; outline: none; width: 100%; }
+    .field input:focus, .field textarea:focus { border-color: #1a1a1a; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
+    .field textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+    .rates-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .rates-grid .field label { font-size: 12px; color: #666; }
     .currency-field { position: relative; }
-
     .currency-field input { padding-left: 46px; }
-
-    .currency-tag {
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: 500;
-      color: #aaa;
-      border-right: 1px solid #e0e0e0;
-      pointer-events: none;
-    }
-
-    .privacy-box {
-      background: #f9f8f5;
-      border-radius: 10px;
-      padding: 1.1rem 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .privacy-box p {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
-    }
-
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .checkbox-row input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      margin-top: 2px;
-      flex-shrink: 0;
-      cursor: pointer;
-      accent-color: #1a1a1a;
-    }
-
-    .checkbox-row label {
-      font-size: 13px;
-      color: #666;
-      line-height: 1.5;
-      cursor: pointer;
-    }
-
-    .submit-area {
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .submit-btn {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 12px 32px;
-      background: #1a1a1a;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: opacity 0.15s, transform 0.1s;
-    }
-
+    .currency-tag { position: absolute; left: 0; top: 0; bottom: 0; width: 36px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; color: #aaa; border-right: 1px solid #e0e0e0; pointer-events: none; }
+    .privacy-box { background: #f9f8f5; border-radius: 10px; padding: 1.1rem 1.25rem; margin-top: 1.5rem; }
+    .privacy-box p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
+    .checkbox-row { display: flex; align-items: flex-start; gap: 10px; }
+    .checkbox-row input[type="checkbox"] { width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0; cursor: pointer; accent-color: #1a1a1a; }
+    .checkbox-row label { font-size: 13px; color: #666; line-height: 1.5; cursor: pointer; }
+    .submit-area { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .submit-btn { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 12px 32px; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.15s, transform 0.1s; }
     .submit-btn:hover { opacity: 0.85; }
     .submit-btn:active { transform: scale(0.98); }
     .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-    .status-msg {
-      font-size: 13px;
-      display: none;
-    }
+    .status-msg { font-size: 13px; display: none; }
     .status-msg.success { color: #2e7d32; display: block; }
-    .status-msg.error   { color: #c62828; display: block; }
-
-    .success-screen {
-      display: none;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-
-    .check-circle {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #e8f5e9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      font-size: 26px;
-    }
-
-    .success-screen h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 26px;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-      color: #1a1a1a;
-    }
-
-    .success-screen p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 560px) {
-      .card { padding: 2rem 1.25rem; }
-      .field-row { grid-template-columns: 1fr; }
-      .rates-grid { grid-template-columns: 1fr; }
-    }
+    .status-msg.error { color: #c62828; display: block; }
+    .success-screen { display: none; text-align: center; padding: 4rem 1rem; }
+    .check-circle { width: 56px; height: 56px; border-radius: 50%; background: #e8f5e9; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 26px; }
+    .success-screen h2 { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; margin-bottom: 0.5rem; color: #1a1a1a; }
+    .success-screen p { font-size: 14px; color: #666; line-height: 1.7; }
+    @media (max-width: 560px) { .card { padding: 2rem 1.25rem; } .field-row { grid-template-columns: 1fr; } .rates-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -262,9 +57,7 @@
         <h1>Registro de modelos</h1>
         <p>Comparte tu información para hacer parte de nuestra base de datos. Todo lo que nos cuentes aquí es confidencial y de uso exclusivo del equipo iBamen.</p>
       </div>
-
       <form id="modelo-form">
-
         <div class="section">
           <div class="section-label">Datos personales</div>
           <div class="field-group">
@@ -294,7 +87,6 @@
             </div>
           </div>
         </div>
-
         <div class="section">
           <div class="section-label">Tarifas de servicio</div>
           <p class="hint" style="margin-bottom:1rem;">Indica el valor en pesos colombianos (COP) por cada modalidad.</p>
@@ -322,7 +114,6 @@
             </div>
           </div>
         </div>
-
         <div class="section">
           <div class="section-label">Uso de imagen</div>
           <p class="hint" style="margin-bottom:1rem;">¿Cuánto cobras por el uso de tu imagen en contenido comercial o publicitario?</p>
@@ -350,7 +141,6 @@
             </div>
           </div>
         </div>
-
         <div class="section">
           <div class="section-label">Portafolio y redes</div>
           <div class="field-group">
@@ -360,12 +150,12 @@
               <textarea id="redes" placeholder="https://instagram.com/tuusuario&#10;https://tiktok.com/@tuusuario" required></textarea>
             </div>
             <div class="field">
-              <label for="portafolio">¿Tienes un book o portafolio en línea?</label>
-              <input type="text" id="portafolio" placeholder="https://tuportafolio.com" required />
+              <label for="portafolio">Comparte tu portafolio o book</label>
+              <span class="hint">Link a tu portafolio en línea (Google Drive, Dropbox, tu web, o donde lo tengas alojado)</span>
+              <input type="text" id="portafolio" placeholder="https://drive.google.com/..." required />
             </div>
           </div>
         </div>
-
         <div class="privacy-box">
           <p>Esta información es de uso personal y exclusivo del equipo iBamen. No será compartida con terceros bajo ninguna circunstancia.</p>
           <div class="checkbox-row">
@@ -373,25 +163,20 @@
             <label for="acepta">Entiendo y acepto que mis datos serán tratados de forma confidencial por iBamen.</label>
           </div>
         </div>
-
         <div class="submit-area">
           <button type="submit" class="submit-btn" id="submit-btn">Enviar registro</button>
           <span class="status-msg" id="status-msg"></span>
         </div>
-
       </form>
     </div>
-
     <div class="success-screen" id="success-screen">
       <div class="check-circle">✓</div>
       <h2>¡Gracias por registrarte!</h2>
       <p>Tu información quedó guardada en nuestra base de datos.<br>Te contactaremos cuando tengamos oportunidades para ti.</p>
     </div>
   </div>
-
   <script>
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqO-WZ5F8CwqJErYKjwG2TFELbCEuxhKlR46fUvf3JETF96f5Fj5B0u9GQsNzX8UNCkw/exec';
-
     document.getElementById('modelo-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('submit-btn');
@@ -399,23 +184,21 @@
       btn.disabled = true;
       btn.textContent = 'Enviando...';
       msg.className = 'status-msg';
-
       const data = {
-        nombre:       document.getElementById('nombre').value,
-        edad:         document.getElementById('edad').value,
-        ciudad:       document.getElementById('ciudad').value,
-        telefono:     document.getElementById('telefono').value,
-        email:        document.getElementById('email').value,
-        tarifa_hora:  document.getElementById('tarifa_hora').value,
+        nombre: document.getElementById('nombre').value,
+        edad: document.getElementById('edad').value,
+        ciudad: document.getElementById('ciudad').value,
+        telefono: document.getElementById('telefono').value,
+        email: document.getElementById('email').value,
+        tarifa_hora: document.getElementById('tarifa_hora').value,
         tarifa_media: document.getElementById('tarifa_media').value,
-        tarifa_dia:   document.getElementById('tarifa_dia').value,
-        imagen_3:     document.getElementById('imagen_3').value,
-        imagen_6:     document.getElementById('imagen_6').value,
-        imagen_12:    document.getElementById('imagen_12').value,
-        redes:        document.getElementById('redes').value,
-        portafolio:   document.getElementById('portafolio').value
+        tarifa_dia: document.getElementById('tarifa_dia').value,
+        imagen_3: document.getElementById('imagen_3').value,
+        imagen_6: document.getElementById('imagen_6').value,
+        imagen_12: document.getElementById('imagen_12').value,
+        redes: document.getElementById('redes').value,
+        portafolio: document.getElementById('portafolio').value
       };
-
       try {
         await fetch(SCRIPT_URL, {
           method: 'POST',
