@@ -10,7 +10,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: #f5f4f0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 3rem 1.5rem; color: #1a1a1a; }
     .card { background: #fff; border-radius: 16px; padding: 3rem; max-width: 680px; width: 100%; box-shadow: 0 2px 24px rgba(0,0,0,0.06); }
-    .form-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ebebeb; }
+    .form-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ebebeb; text-align: center; }
+    .logo { max-width: 120px; height: auto; margin-bottom: 1.5rem; }
     .brand-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: #999; text-transform: uppercase; margin-bottom: 0.75rem; }
     .form-header h1 { font-family: 'DM Serif Display', serif; font-size: 30px; font-weight: 400; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.2; }
     .form-header p { font-size: 14px; color: #666; line-height: 1.7; }
@@ -46,13 +47,14 @@
     .check-circle { width: 56px; height: 56px; border-radius: 50%; background: #e8f5e9; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 26px; }
     .success-screen h2 { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; margin-bottom: 0.5rem; color: #1a1a1a; }
     .success-screen p { font-size: 14px; color: #666; line-height: 1.7; }
-    @media (max-width: 560px) { .card { padding: 2rem 1.25rem; } .field-row { grid-template-columns: 1fr; } .rates-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .card { padding: 2rem 1.25rem; } .field-row { grid-template-columns: 1fr; } .rates-grid { grid-template-columns: 1fr; } .logo { max-width: 100px; } }
   </style>
 </head>
 <body>
   <div class="card">
     <div id="form-container">
       <div class="form-header">
+        <img src="20260401_225808_0000.png" alt="iBamen Logo" class="logo" />
         <div class="brand-tag">iBamen · Base de datos</div>
         <h1>Registro de modelos</h1>
         <p>Comparte tu información para hacer parte de nuestra base de datos. Todo lo que nos cuentes aquí es confidencial y de uso exclusivo del equipo iBamen.</p>
